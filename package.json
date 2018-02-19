@@ -1,6 +1,6 @@
 {
   "name": "yggdrasil-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "seed init cli",
   "main": "index.js",
   "scripts": {

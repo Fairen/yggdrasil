@@ -6,8 +6,8 @@ const figlet      = require('figlet');
 const CLI         = require('clui');
 const git         = require('simple-git')();
 const Spinner     = CLI.Spinner;
-const repo = require('./lib/repo');
-const inquirer  = require('./lib/inquirer');
+const repo        = require('./lib/repo');
+const inquirer    = require('./lib/inquirer');
 clear();
 
 console.log(
@@ -28,7 +28,8 @@ console.log(
 "          {"+ "\n" ) +  
   chalk.yellow( 
     figlet.textSync('Yggdrasil', { horizontalLayout: 'full' })
-  )
+  ) + 
+  "\n" 
 );
 
 const run = async () => {
@@ -38,7 +39,7 @@ const run = async () => {
         await repo.clone(seedType);
         console.log(chalk.green("Seed (") + chalk.yellow(seedType) + chalk.green(") successfuly retrieved."))
     }else{
-        console.log(chalk.red('Bye.'));
+        console.log("\n" + chalk.red('See you soon.'));
     }
 }
 

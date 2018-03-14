@@ -9,6 +9,7 @@ const Spinner     = CLI.Spinner;
 const repo        = require('./lib/repo');
 const inquirer    = require('./lib/inquirer');
 const fs          = require('fs');
+const path        = require('path');    
 clear();
 
 console.log(
@@ -38,7 +39,7 @@ const run = async () => {
     const status = new Spinner('Retrieving seed list...');
     status.start();
 
-    let data = await fs.readFileSync('./model/seed-list.json', 'utf8');
+    let data = await fs.readFileSync(path.join(__dirname, 'model/seed-list.json'), 'utf8');
     let seeds = JSON.parse(data);
     status.stop();
 

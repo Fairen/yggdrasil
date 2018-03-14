@@ -25,10 +25,10 @@ Yggdrasil is a CLI made to help building Typescript applications by providing ba
 
 ## Seeds
 
-|  Name   |  Repository  |
-| ------- | -----------  |
-| [ Angular    ] Component Module | https://github.com/Fairen/seed-component |
-| [ TypeScript ] Classes and Modules Library Package | https://github.com/Fairen/seed-models |
+|  Type   |  Name   |  Repository  |
+| ------- | ------- | -----------  |
+| Angular | Component Module | https://github.com/Fairen/seed-component |
+| TypeScript | Classes and Modules Library Package | https://github.com/Fairen/seed-models |
 
 ## Installation
 

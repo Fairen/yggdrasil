@@ -8,6 +8,7 @@ const git         = require('simple-git')();
 const Spinner     = CLI.Spinner;
 const repo        = require('./lib/repo');
 const inquirer    = require('./lib/inquirer');
+const fs          = require('fs');
 clear();
 
 console.log(
@@ -33,13 +34,38 @@ console.log(
 );
 
 const run = async () => {
-    const credentials = await inquirer.askSeedWanted();
+
+    const status = new Spinner('Retrieving seed list...');
+    status.start();
+
+    let data = await fs.readFileSync('./model/seed-list.json', 'utf8');
+    let seeds = JSON.parse(data);
+    status.stop();
+
+    let questions = [
+        {
+            type: 'checkbox',
+            name: 'seedType',
+            message: 'Which seeds would you want to retrieve ? \n',
+            choices: seeds,
+            default: seeds
+        }
+    ];
+    const credentials = await inquirer.askSeedWanted(questions);
     if(credentials && credentials.seedType && credentials.seedType.length > 0){
-        let seedType = credentials.seedType[0];
-        await repo.clone(seedType);
-        console.log(chalk.green("Seed (") + chalk.yellow(seedType) + chalk.green(") successfuly retrieved."))
+
+        let seedsSelected = seeds.filter( seed => {
+            return credentials.seedType.includes(seed.value);
+        });
+        const status = new Spinner('Retrieving seeds ... \n');
+        status.start();
+        for( seed of seedsSelected) {
+            await repo.clone(seed);
+            console.log(chalk.green("Seed (") + chalk.yellow(seed.name) + chalk.green(") successfuly retrieved."))
+        }
+        status.stop();
     }else{
-        console.log("\n" + chalk.red('See you soon.'));
+        console.log("\n" + chalk.green('See you soon.'));
     }
 }
 

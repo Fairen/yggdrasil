@@ -1,0 +1,10 @@
+[
+    {
+        "value"     :   "https://github.com/Fairen/seed-models.git",
+        "name"      :   "[ TypeScript ] Classes and Modules Library Package"
+    },
+    {
+        "value"     :   "https://github.com/Fairen/seed-component.git",
+        "name"      :   "[ Angular    ] Component Module"
+    }
+]

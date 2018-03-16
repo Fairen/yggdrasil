@@ -1,10 +1,21 @@
 [
+    
+    {
+        "value"     :   "https://github.com/Fairen/seed-crud-service.git",
+        "name"      :   "[ Angular    ] Generic CRUD Service",
+        "project"   :   "seed-crud-service",
+        "folder"    :   "lib"
+    },
     {
         "value"     :   "https://github.com/Fairen/seed-component.git",
-        "name"      :   "[ Angular    ] Component Module"
+        "project"   :   "seed-component",
+        "name"      :   "[ Angular    ] Component Module",
+        "folder"    :   ""
     },
     {
         "value"     :   "https://github.com/Fairen/seed-models.git",
-        "name"      :   "[ TypeScript ] Classes and Modules Library Package"
+        "name"      :   "[ TypeScript ] Classes and Modules Library Package",
+        "project"   :   "seed-models",
+        "folder"    :   ""
     }
 ]

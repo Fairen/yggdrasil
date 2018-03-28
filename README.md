@@ -29,6 +29,7 @@ Yggdrasil is a CLI made to help building Typescript applications by providing ba
 | ------- | ------- | -----------  |
 | Angular | Component Module | https://github.com/Fairen/seed-component |
 | Angular | Generic CRUD Service | https://github.com/Fairen/seed-crud-service |
+| Angular | Simple Stream Service | https://github.com/Fairen/seed-simple-stream-service |
 | TypeScript | Classes and Modules Library Package | https://github.com/Fairen/seed-models |
 
 ## Installation

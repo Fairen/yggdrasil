@@ -7,6 +7,12 @@
         "folder"    :   "lib"
     },
     {
+        "value"     :   "https://github.com/Fairen/seed-simple-stream-service.git",
+        "name"      :   "[ Angular    ] Simple Stream Service",
+        "project"   :   "seed-simple-stream-service",
+        "folder"    :   "lib"
+    },
+    {
         "value"     :   "https://github.com/Fairen/seed-component.git",
         "project"   :   "seed-component",
         "name"      :   "[ Angular    ] Component Module",

@@ -44,7 +44,7 @@ npm install -g yggdrasil-cli
 yg
 ```
 
-![Gif Example](https://raw.githubusercontent.com/Fairen/yggdrasil/develop/img/example.gif "GIF Example")
+![Gif Example](https://raw.githubusercontent.com/Fairen/yggdrasil/master/img/example.gif "GIF Example")
 
 
 ## License

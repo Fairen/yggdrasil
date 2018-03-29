@@ -43,6 +43,10 @@ npm install -g yggdrasil-cli
 ```bash
 yg
 ```
+
+![Gif Example](https://raw.githubusercontent.com/Fairen/yggdrasil/master/img/example.gif "GIF Example")
+
+
 ## License
 
 MIT

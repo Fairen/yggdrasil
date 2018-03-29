@@ -4,7 +4,6 @@ const chalk       = require('chalk');
 const clear       = require('clear');
 const figlet      = require('figlet');
 const CLI         = require('clui');
-const git         = require('simple-git')();
 const Spinner     = CLI.Spinner;
 const repo        = require('./lib/repo');
 const inquirer    = require('./lib/inquirer');
@@ -12,33 +11,36 @@ const fs          = require('fs');
 const path        = require('path');    
 clear();
 
-console.log(
-    chalk.green(
-"      # #### ####" + "\n" + 
-"    ### \/#|### |/####" + "\n" + 
-"   ##\/#/ \||/##/_/##/_#" + "\n" + 
-" ###  \/###|/ \/ # ###" + "\n" + 
-"##_\_#\_\## | #/###_/_####" + "\n" + 
-"## #### # \ #| /  #### ##/##" + "\n" + 
-"__#_--###`  |{,###---###-~" + "\n" + 
-"         \ }{" + "\n" + 
-"          }}{" + "\n" + 
-"          }}{" + "\n" + 
-"          {{}" + "\n" + 
-"    , -=-~{ .-^- _" + "\n" + 
-"          `}" + "\n" + 
-"          {"+ "\n" ) +  
-  chalk.yellow( 
-    figlet.textSync('Yggdrasil', { horizontalLayout: 'full' })
-  ) + 
-  "\n" 
-);
+const printHeader = () => {
+    console.log(
+        chalk.green(
+    "      # #### ####" + "\n" + 
+    "    ### \/#|### |/####" + "\n" + 
+    "   ##\/#/ \||/##/_/##/_#" + "\n" + 
+    " ###  \/###|/ \/ # ###" + "\n" + 
+    "##_\_#\_\## | #/###_/_####" + "\n" + 
+    "## #### # \ #| /  #### ##/##" + "\n" + 
+    "__#_--###`  |{,###---###-~" + "\n" + 
+    "         \ }{" + "\n" + 
+    "          }}{" + "\n" + 
+    "          }}{" + "\n" + 
+    "          {{}" + "\n" + 
+    "    , -=-~{ .-^- _" + "\n" + 
+    "          `}" + "\n" + 
+    "          {"+ "\n" ) +  
+      chalk.yellow( 
+        figlet.textSync('Yggdrasil', { horizontalLayout: 'full' })
+      ) + 
+      "\n" 
+    );
+};
+
+printHeader();
 
 const run = async () => {
 
     const status = new Spinner('Retrieving seed list...');
     status.start();
-
     let data = await fs.readFileSync(path.join(__dirname, 'model/seed-list.json'), 'utf8');
     let seeds = JSON.parse(data);
     status.stop();
@@ -52,19 +54,29 @@ const run = async () => {
             default: seeds
         }
     ];
+    
     const credentials = await inquirer.askSeedWanted(questions);
+    
     if(credentials && credentials.seedType && credentials.seedType.length > 0){
 
         let seedsSelected = seeds.filter( seed => {
             return credentials.seedType.includes(seed.value);
         });
-        const status = new Spinner('Retrieving seeds ... \n');
-        status.start();
+
+        clear();
+        printHeader();
+        const statusSeeds = new Spinner('Retrieving seeds ...');
+        clear();
+        printHeader();
         for( seed of seedsSelected) {
+            statusSeeds.start();
+            statusSeeds.message('Retrieving '+chalk.yellow(seed.name)+' ...');
             await repo.clone(seed);
-            console.log(chalk.green("Seed (") + chalk.yellow(seed.name) + chalk.green(") successfuly retrieved."))
+            statusSeeds.stop();
+            console.log('\n');
+            console.log(chalk.yellow(seed.name) + chalk.green(" successfuly retrieved."));
         }
-        status.stop();
+        console.log("\n" + chalk.green('See you soon.'));
     }else{
         console.log("\n" + chalk.green('See you soon.'));
     }

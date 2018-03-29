@@ -1,6 +1,6 @@
 {
   "name": "yggdrasil-cli",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Yggdrasil is a CLI made to help building Typescript applications by providing basic seeds (scafolding, CI and CD) for transversal development needs.",
   "main": "index.js",
   "scripts": {

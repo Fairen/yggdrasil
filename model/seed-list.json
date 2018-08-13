@@ -1,27 +1,32 @@
-[
-    
+{
+  "seeds": [
     {
-        "value"     :   "https://github.com/Fairen/seed-crud-service.git",
-        "name"      :   "[ Angular    ] Generic CRUD Service",
-        "project"   :   "seed-crud-service",
-        "folder"    :   "lib"
+      "value": "https://github.com/Fairen/seed-simple-stream-service.git",
+      "name": "[   Angular  ] Simple Stream Service",
+      "project": "seed-simple-stream-service",
+      "folder": "lib",
+      "counter": 0
     },
     {
-        "value"     :   "https://github.com/Fairen/seed-simple-stream-service.git",
-        "name"      :   "[ Angular    ] Simple Stream Service",
-        "project"   :   "seed-simple-stream-service",
-        "folder"    :   "lib"
+      "value": "https://github.com/Fairen/seed-component.git",
+      "project": "seed-component",
+      "name": "[   Angular  ] Component Module",
+      "folder": "",
+      "counter": 0
     },
     {
-        "value"     :   "https://github.com/Fairen/seed-component.git",
-        "project"   :   "seed-component",
-        "name"      :   "[ Angular    ] Component Module",
-        "folder"    :   ""
+      "value": "https://github.com/Fairen/seed-crud-service.git",
+      "name": "[   Angular  ] Generic CRUD Service",
+      "project": "seed-crud-service",
+      "folder": "lib",
+      "counter": 0
     },
     {
-        "value"     :   "https://github.com/Fairen/seed-models.git",
-        "name"      :   "[ TypeScript ] Classes and Modules Library Package",
-        "project"   :   "seed-models",
-        "folder"    :   ""
+      "value": "https://github.com/Fairen/seed-models.git",
+      "name": "[ TypeScript ] Classes and Modules Library Package",
+      "project": "seed-models",
+      "folder": "",
+      "counter": 0
     }
-]
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "name": "yggdrasil-cli",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Yggdrasil is a CLI made to help building Typescript applications by providing basic seeds (scafolding, CI and CD) for transversal development needs.",
   "main": "index.js",
   "scripts": {
-    "yg": "node index.js",
+    "yg": "node index.js -l",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
@@ -33,6 +33,7 @@
     "fs-extra": "^5.0.0",
     "inquirer": "^5.1.0",
     "lodash": "^4.17.5",
+    "lowdb": "^1.0.0",
     "minimist": "^1.2.0",
     "simple-git": "1.70.0",
     "touch": "^3.1.0"

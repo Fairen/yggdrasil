@@ -204,7 +204,6 @@ const chooseSeedFromArg = (seedRegex) => {
     });
     let seed = seeds[0];
     retrieveSeed(seed);
-    exit();
 }
 
 const retrieveSeed = async (seed) => {
